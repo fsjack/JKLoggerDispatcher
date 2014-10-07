@@ -4,10 +4,9 @@ JKLoggerDispatcher
 Check the swift version here ☞  [LogDispatcher.Swift](https://github.com/YuAo/LogDispatcher.Swift)
 
 ##Overview
-Simplely put, JKLoggerDispatcher take over all control as progrom start executing NSLog(), and tell every module that registered before to do their job.
+When you call NSLog() to print/log something, JKLogDispatcher will walk through a list of registered log processing modules, choose the proper one, and use it to do some additional processing for the log.
 
-
-##Why Replacing NSLog()?
+##Why overload NSLog()?
 
 **The answer is we want to keep the code clean and no redundancy.**
 
@@ -101,6 +100,8 @@ Here's example:
 		[[JKLoggerDispatcher defaultDispatcher] registerLoggerModule:[[JKExampleLoggerModule alloc] init]];
 		return YES;
 	}
+	
+**If no moudle is registered, NSLog() works as usual.**
 	
 ##Requirements
 * Automatic Reference Counting (ARC)
