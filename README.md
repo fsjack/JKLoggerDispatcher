@@ -65,7 +65,18 @@ With JKLoggerDispatcher it becomes extremely simple. And no import thirdparty li
 	NSLog(@"[INFO] This is a info.");
 
 ##Usage
-###Add header to project prefix.pch file
+###Add to your project
+####Cocoapods
+add following line in your Podfile.
+
+`pod "JKLoggerDispatcher"`
+
+####Manual installation
+copy `JKLoggerDispatcher.h` and `JKLoggerDispatcher.m` to your project.
+
+===
+
+###Add header to project_prefix.pch file
 If your project is created by XCode 6 and you cannot find your pch file, check this [link](http://stackoverflow.com/questions/25840720/xcode-6-pch-file-not-found).
 
 	#ifdef __OBJC__
@@ -74,6 +85,7 @@ If your project is created by XCode 6 and you cannot find your pch file, check t
 	
 We recommend you to put the import in pch file considering it's extremely common for NSLog(). **Without importing 'JKLoggerDispatcher.h' JKLoggerDispatcher will not work as expected.**
 
+===
 ###Write a logger module
 You can take a look at the `JKConsoleLoggerModule` in the demo.
 
@@ -95,6 +107,7 @@ Here's example:
 	}
 	@end
 
+===
 ###Register your logger module
 	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 		[[JKLoggerDispatcher defaultDispatcher] registerLoggerModule:[[JKExampleLoggerModule alloc] init]];
