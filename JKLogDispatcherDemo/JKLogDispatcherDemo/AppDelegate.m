@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [[JKLoggerDispatcher defaultDispatcher] registerLoggerModule:[JKConsoleLoggerModule sharedModule]];
-    [[DDTTYLogger sharedInstance] setLogFormatter:[[JKConsoleLogFormatter alloc] init]];
+//    [[DDTTYLogger sharedInstance] setLogFormatter:[[JKConsoleLogFormatter alloc] init]];
     
 #ifdef DEBUG
     [JKConsoleLoggerModule setConsoleLogLevel:LOG_FLAG_ERROR|LOG_FLAG_WARN|LOG_FLAG_INFO|LOG_FLAG_VERBOSE|LOG_FLAG_DEBUG];
