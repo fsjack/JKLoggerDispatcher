@@ -33,10 +33,6 @@ Now:
 		NSLog(@"[Analytic] ButtonTapEvent");
 	}
 	
-And register your own analytic module
-
-	[[JKLoggerDispatcher defaultDispatcher] registerLoggerModule:[[AnalyticModule alloc] init]];
-	
 Then when NSLog() get executed JKLoggerDispatcher will ask your module to process the log message. Easy right?
 
 ##Examples
@@ -74,7 +70,7 @@ add following line in your Podfile.
 ####Manual installation
 copy `JKLoggerDispatcher.h` and `JKLoggerDispatcher.m` to your project.
 
-===
+
 
 ###Add header to project_prefix.pch file
 If your project is created by XCode 6 and you cannot find your pch file, check this [link](http://stackoverflow.com/questions/25840720/xcode-6-pch-file-not-found).
@@ -85,7 +81,7 @@ If your project is created by XCode 6 and you cannot find your pch file, check t
 	
 We recommend you to put the import in pch file considering it's extremely common for NSLog(). **Without importing 'JKLoggerDispatcher.h' JKLoggerDispatcher will not work as expected.**
 
-===
+
 ###Write a logger module
 You can take a look at the `JKConsoleLoggerModule` in the demo.
 
@@ -107,7 +103,7 @@ Here's example:
 	}
 	@end
 
-===
+
 ###Register your logger module
 	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 		[[JKLoggerDispatcher defaultDispatcher] registerLoggerModule:[[JKExampleLoggerModule alloc] init]];
