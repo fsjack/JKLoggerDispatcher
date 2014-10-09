@@ -13,6 +13,7 @@ PODS:
     - JKLogDispatcher/Core
   - JKLogDispatcher/CocoaLumberjackModule (1.0.1):
     - CocoaLumberjack
+    - JKLogDispatcher/Core
   - JKLogDispatcher/Core (1.0.1)
 
 DEPENDENCIES:
@@ -25,6 +26,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 956d3fb98fed498a13d56499f262c975ef431c98
-  JKLogDispatcher: 33c54dc6547e5194612aaf676fae991044851380
+  JKLogDispatcher: 301f838cab2775e091a2d17559832f64cc68ed57
 
 COCOAPODS: 0.33.1
