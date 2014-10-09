@@ -67,9 +67,14 @@ add following line in your Podfile.
 
 `pod "JKLoggerDispatcher"`
 
-####Manual installation
-copy `JKLoggerDispatcher.h` and `JKLoggerDispatcher.m` to your project.
+You can choose `Core` or `Modules` respectively for your project.
 
+`pod "JKLoggerDispatcher/Core"`
+
+`pod "JKLoggerDispatcher/CocoaLumberjackModule"`
+
+####Manual installation
+copy all files under `JKLogDispatcher` folder to your project.
 
 
 ###Add header to project_prefix.pch file
