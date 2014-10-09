@@ -1,24 +1,24 @@
 //
-//  JKLoggerDispatcher.m
+//  JKLogDispatcher.m
 //  Pods
 //
 //  Created by Jackie CHEUNG on 14-9-5.
 //
 //
 
-#import "JKLoggerDispatcher.h"
+#import "JKLogDispatcher.h"
 
-@interface JKLoggerDispatcher ()
+@interface JKLogDispatcher ()
 @property (nonatomic, copy) NSArray *registeredLoggerModules;
 @end
 
-@implementation JKLoggerDispatcher
+@implementation JKLogDispatcher
 
 + (instancetype)defaultDispatcher {
-    static JKLoggerDispatcher *_defaultDispatcher = nil;
+    static JKLogDispatcher *_defaultDispatcher = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _defaultDispatcher = [[JKLoggerDispatcher alloc] init];
+        _defaultDispatcher = [[JKLogDispatcher alloc] init];
     });
     return _defaultDispatcher;
 }
@@ -27,9 +27,9 @@
     va_list arg_ptr;
     va_start(arg_ptr, format);
     
-    if([JKLoggerDispatcher defaultDispatcher].registeredLoggerModules.count) {
-        for (id<JKLoggerModule>module in [JKLoggerDispatcher defaultDispatcher].registeredLoggerModules) {
-            if([module dispatcher:[JKLoggerDispatcher defaultDispatcher] canModuleProcessLogWithFileName:fileName method:method line:line text:format arguments:arg_ptr]) break;
+    if([JKLogDispatcher defaultDispatcher].registeredLoggerModules.count) {
+        for (id<JKLoggerModule>module in [JKLogDispatcher defaultDispatcher].registeredLoggerModules) {
+            if([module dispatcher:[JKLogDispatcher defaultDispatcher] canModuleProcessLogWithFileName:fileName method:method line:line text:format arguments:arg_ptr]) break;
         }
     } else {
         NSLogv(format, arg_ptr);

@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 #import "JKConsoleLogFormatter.h"
-#import <JKLogDispatcher/JKLoggerDispatcher.h>
 #import <JKLogDispatcher/JKConsoleLoggerModule.h>
+#import <JKLogDispatcher/JKLogDispatcher.h>
 
 @interface AppDelegate ()
 
@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[JKLoggerDispatcher defaultDispatcher] registerLoggerModule:[JKConsoleLoggerModule sharedModule]];
+    [[JKLogDispatcher defaultDispatcher] registerLoggerModule:[JKConsoleLoggerModule sharedModule]];
 //    [[DDTTYLogger sharedInstance] setLogFormatter:[[JKConsoleLogFormatter alloc] init]];
     
 #ifdef DEBUG

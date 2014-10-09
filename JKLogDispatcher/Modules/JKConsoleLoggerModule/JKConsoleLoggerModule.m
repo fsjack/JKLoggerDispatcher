@@ -29,7 +29,7 @@ static int _JKConsoleLogLevel = LOG_LEVEL_ALL;
     _JKConsoleLogLevel = logLevel;
 }
 
-- (BOOL)dispatcher:(JKLoggerDispatcher *)dispatcher canModuleProcessLogWithFileName:(NSString *)fileName method:(NSString *)method line:(int)line text:(NSString *)format arguments:(va_list)arguments {
+- (BOOL)dispatcher:(JKLogDispatcher *)dispatcher canModuleProcessLogWithFileName:(NSString *)fileName method:(NSString *)method line:(int)line text:(NSString *)format arguments:(va_list)arguments {
     
     int logFlag = LOG_FLAG_INFO;
     for (NSString *logPrefixString in self.internalStorage) {
@@ -56,7 +56,7 @@ static int _JKConsoleLogLevel = LOG_LEVEL_ALL;
     return NO;
 }
 
-- (void)moduleDidAddToDispatcher:(JKLoggerDispatcher *)dispatcher {
+- (void)moduleDidAddToDispatcher:(JKLogDispatcher *)dispatcher {
     
 #ifdef DEBUG
     setenv("XcodeColors", "YES", 0);
