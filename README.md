@@ -1,4 +1,4 @@
-JKLoggerDispatcher
+JKLogDispatcher
 ==================
 
 Check the swift version here ☞  [LogDispatcher.Swift](https://github.com/YuAo/LogDispatcher.Swift)
@@ -14,7 +14,7 @@ Rememeber how you add analytics code to your project?
 
 Let say you need to track how many times the button user have tapped. you add a method responsding to UIButton's UIControlEventTouchUpInside event, and write the analytic code straighthod in this method, Right? It doesn't look anything wrong. BUT when you come back to maintain the code you will know how awful it looks, Or occasionally, the analytic platform update it's SDK for some reason(god knows), you will NEVER make your code run again...
 
-With JKLoggerDispatcher, you don't need to worry about all these shit coming up to you again. 
+With JKLogDispatcher, you don't need to worry about all these shit coming up to you again. 
 
 **All you need to do is write your own module.**
 
@@ -33,7 +33,7 @@ Now:
 		NSLog(@"[Analytic] ButtonTapEvent");
 	}
 	
-Then when NSLog() get executed JKLoggerDispatcher will ask your module to process the log message. Easy right?
+Then when NSLog() get executed JKLogDispatcher will ask your module to process the log message. Easy right?
 
 ##Examples
 
@@ -52,7 +52,7 @@ On the past, you probably need to write these code to do that:
 	DDLogVerbose(@"[VERBOSE] This is a verbose.");
 	DDLogInfo(@"[INFO] This is a info.");
 
-With JKLoggerDispatcher it becomes extremely simple. And no import thirdparty library, No DDLog() anymore.
+With JKLogDispatcher it becomes extremely simple. And no import thirdparty library, No DDLog() anymore.
 
 	NSLog(@"[ERROR] This is an error.");
 	NSLog(@"[WARNING] This is a warning.");
@@ -65,33 +65,32 @@ With JKLoggerDispatcher it becomes extremely simple. And no import thirdparty li
 ####Cocoapods
 add following line in your Podfile.
 
-`pod "JKLoggerDispatcher"`
+`pod "JKLogDispatcher"`
 
 You can choose `Core` or `Modules` respectively for your project.
 
-`pod "JKLoggerDispatcher/Core"`
+`pod "JKLogDispatcher/Core"`
 
-`pod "JKLoggerDispatcher/CocoaLumberjackModule"`
+`pod "JKLogDispatcher/CocoaLumberjackModule"`
 
 ####Manual installation
-copy all files under `JKLogDispatcher` folder to your project.
-
+Copy all files under `JKLogDispatcher` folder to your project.
 
 ###Add header to project_prefix.pch file
 If your project is created by XCode 6 and you cannot find your pch file, check this [link](http://stackoverflow.com/questions/25840720/xcode-6-pch-file-not-found).
 
 	#ifdef __OBJC__
-		#import <JKLoggerDispatcher/JKLoggerDispatcher.h>
+		#import <JKLogDispatcher/JKLogDispatcher.h>
 	#endif
 	
-We recommend you to put the import in pch file considering it's extremely common for NSLog(). **Without importing 'JKLoggerDispatcher.h' JKLoggerDispatcher will not work as expected.**
+We recommend you to put the import in pch file considering it's extremely common for NSLog(). **Without importing 'JKLogDispatcher.h' JKLogDispatcher will not work as expected.**
 
 
 ###Write a logger module
 You can take a look at the `JKConsoleLoggerModule` in the demo.
 
 
-In a word, Make your class confirms to **JKLoggerModule** protocol and implement `- (BOOL)dispatcher:(JKLoggerDispatcher *)dispatcher canModuleProcessLogWithFileName:(NSString *)fileName method:(NSString *)method line:(int)line text:(NSString *)format arguments:(va_list)arguments`.
+In a word, Make your class confirms to **JKLoggerModule** protocol and implement `- (BOOL)dispatcher:(JKLogDispatcher *)dispatcher canModuleProcessLogWithFileName:(NSString *)fileName method:(NSString *)method line:(int)line text:(NSString *)format arguments:(va_list)arguments`.
 
 Here's example:
 
@@ -102,7 +101,7 @@ Here's example:
 	
 	//JKExampleLoggerModule.m
 	@implementation JKExampleLoggerModule
-	- (BOOL)dispatcher:(JKLoggerDispatcher *)dispatcher canModuleProcessLogWithFileName:(NSString *)fileName 	method:(NSString *)method line:(int)line text:(NSString *)format arguments:(va_list)arguments {
+	- (BOOL)dispatcher:(JKLogDispatcher *)dispatcher canModuleProcessLogWithFileName:(NSString *)fileName 	method:(NSString *)method line:(int)line text:(NSString *)format arguments:(va_list)arguments {
 		//Do your job here.Like analytics or colour the log message.
 		//Return YES if log have been processed. No otherwise.
 	}
@@ -111,7 +110,7 @@ Here's example:
 
 ###Register your logger module
 	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-		[[JKLoggerDispatcher defaultDispatcher] registerLoggerModule:[[JKExampleLoggerModule alloc] init]];
+		[[JKLogDispatcher defaultDispatcher] registerLoggerModule:[[JKExampleLoggerModule alloc] init]];
 		return YES;
 	}
 	
