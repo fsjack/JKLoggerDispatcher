@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
-#import <JKLogDispatcher/JKLoggerDispatcher.h>
+#import "JKLoggerDispatcher.h"
 
 @interface JKConsoleLoggerModule : NSObject <JKLoggerModule>
 

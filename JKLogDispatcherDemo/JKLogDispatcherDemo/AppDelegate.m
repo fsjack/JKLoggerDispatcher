@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "JKLoggerDispatcher.h"
-#import "JKConsoleLoggerModule.h"
 #import "JKConsoleLogFormatter.h"
+#import <JKLogDispatcher/JKLoggerDispatcher.h>
+#import <JKLogDispatcher/JKConsoleLoggerModule.h>
 
 @interface AppDelegate ()
 

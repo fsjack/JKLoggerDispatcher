@@ -7,11 +7,15 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/fsjack/JKLoggerDispatcher"	
   s.source       = { :git => "https://github.com/fsjack/JKLoggerDispatcher.git", :tag => '1.0.1'}
-  s.source_files = 'JKLogDispatcher/Core/*.{h,m}'
+  s.source_files = 'JKLogDispatcher/**/*.{h,m}'
   s.license      = 'MIT'
   s.requires_arc = true
 
-  s.subspec 'CocoaLumberjackLogger' do |ss|
+  s.subspec 'Core' do |ss|
+    ss.source_files = 'JKLogDispatcher/Core/*.{h,m}'
+  end  
+
+  s.subspec 'CocoaLumberjackModule' do |ss|
     ss.source_files = 'JKLogDispatcher/Modules/JKConsoleLoggerModule/*.{h,m}'
     ss.dependency 'CocoaLumberjack'
   end

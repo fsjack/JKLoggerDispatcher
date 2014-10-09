@@ -2,6 +2,7 @@
 # platform :ios, "6.0"
 
 target "JKLogDispatcherDemo" do
+  pod 'JKLogDispatcher', :path => '../'
   pod 'CocoaLumberjack'
 end
 

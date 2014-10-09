@@ -8,11 +8,23 @@ PODS:
   - CocoaLumberjack/Core (2.0.0-beta)
   - CocoaLumberjack/Extensions (2.0.0-beta):
     - CocoaLumberjack/Core
+  - JKLogDispatcher (1.0.1):
+    - JKLogDispatcher/CocoaLumberjackModule
+    - JKLogDispatcher/Core
+  - JKLogDispatcher/CocoaLumberjackModule (1.0.1):
+    - CocoaLumberjack
+  - JKLogDispatcher/Core (1.0.1)
 
 DEPENDENCIES:
   - CocoaLumberjack
+  - JKLogDispatcher (from `../`)
+
+EXTERNAL SOURCES:
+  JKLogDispatcher:
+    :path: ../
 
 SPEC CHECKSUMS:
   CocoaLumberjack: aadc76d7bd6c839ca84b38ed50cbf89d7cf8c693
+  JKLogDispatcher: 33c54dc6547e5194612aaf676fae991044851380
 
 COCOAPODS: 0.33.1

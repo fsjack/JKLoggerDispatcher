@@ -15,8 +15,6 @@
 		8C29ADD119E41A200003101E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C29ADCF19E41A200003101E /* LaunchScreen.xib */; };
 		8C29ADDD19E41A200003101E /* JKLogDispatcherDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C29ADDC19E41A200003101E /* JKLogDispatcherDemoTests.m */; };
 		8C29ADF319E41ACD0003101E /* JKConsoleLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C29ADF219E41ACD0003101E /* JKConsoleLogFormatter.m */; };
-		8CA8EA0B19E682B0004E2180 /* JKLoggerDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8EA0619E682B0004E2180 /* JKLoggerDispatcher.m */; };
-		8CA8EA0C19E682B0004E2180 /* JKConsoleLoggerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8EA0A19E682B0004E2180 /* JKConsoleLoggerModule.m */; };
 		CF7A576FD50A49FCB0C05E1B /* libPods-JKLogDispatcherDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBEAD1D03194C3090D20D27 /* libPods-JKLogDispatcherDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -47,10 +45,6 @@
 		8C29ADDC19E41A200003101E /* JKLogDispatcherDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKLogDispatcherDemoTests.m; sourceTree = "<group>"; };
 		8C29ADF119E41ACD0003101E /* JKConsoleLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKConsoleLogFormatter.h; sourceTree = "<group>"; };
 		8C29ADF219E41ACD0003101E /* JKConsoleLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKConsoleLogFormatter.m; sourceTree = "<group>"; };
-		8CA8EA0519E682B0004E2180 /* JKLoggerDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKLoggerDispatcher.h; sourceTree = "<group>"; };
-		8CA8EA0619E682B0004E2180 /* JKLoggerDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKLoggerDispatcher.m; sourceTree = "<group>"; };
-		8CA8EA0919E682B0004E2180 /* JKConsoleLoggerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKConsoleLoggerModule.h; sourceTree = "<group>"; };
-		8CA8EA0A19E682B0004E2180 /* JKConsoleLoggerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKConsoleLoggerModule.m; sourceTree = "<group>"; };
 		EFBEAD1D03194C3090D20D27 /* libPods-JKLogDispatcherDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JKLogDispatcherDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,7 +90,6 @@
 		8C29ADBF19E41A200003101E /* JKLogDispatcherDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8CA8EA0319E682B0004E2180 /* JKLogDispatcher */,
 				8C29ADF119E41ACD0003101E /* JKConsoleLogFormatter.h */,
 				8C29ADF219E41ACD0003101E /* JKConsoleLogFormatter.m */,
 				8C29ADC419E41A200003101E /* AppDelegate.h */,
@@ -135,42 +128,6 @@
 				8C29ADDB19E41A200003101E /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8CA8EA0319E682B0004E2180 /* JKLogDispatcher */ = {
-			isa = PBXGroup;
-			children = (
-				8CA8EA0419E682B0004E2180 /* Core */,
-				8CA8EA0719E682B0004E2180 /* Modules */,
-			);
-			name = JKLogDispatcher;
-			path = ../../JKLogDispatcher;
-			sourceTree = "<group>";
-		};
-		8CA8EA0419E682B0004E2180 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				8CA8EA0519E682B0004E2180 /* JKLoggerDispatcher.h */,
-				8CA8EA0619E682B0004E2180 /* JKLoggerDispatcher.m */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		8CA8EA0719E682B0004E2180 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				8CA8EA0819E682B0004E2180 /* JKConsoleLoggerModule */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		8CA8EA0819E682B0004E2180 /* JKConsoleLoggerModule */ = {
-			isa = PBXGroup;
-			children = (
-				8CA8EA0919E682B0004E2180 /* JKConsoleLoggerModule.h */,
-				8CA8EA0A19E682B0004E2180 /* JKConsoleLoggerModule.m */,
-			);
-			path = JKConsoleLoggerModule;
 			sourceTree = "<group>";
 		};
 		C38AB1CFAD82431E99EC27AA /* Frameworks */ = {
@@ -318,8 +275,6 @@
 			files = (
 				8C29ADF319E41ACD0003101E /* JKConsoleLogFormatter.m in Sources */,
 				8C29ADC919E41A200003101E /* ViewController.m in Sources */,
-				8CA8EA0C19E682B0004E2180 /* JKConsoleLoggerModule.m in Sources */,
-				8CA8EA0B19E682B0004E2180 /* JKLoggerDispatcher.m in Sources */,
 				8C29ADC619E41A200003101E /* AppDelegate.m in Sources */,
 				8C29ADC319E41A200003101E /* main.m in Sources */,
 			);
