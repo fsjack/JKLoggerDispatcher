@@ -62,7 +62,7 @@ With JKLogDispatcher it becomes extremely simple. And no import thirdparty libra
 
 ##Usage
 ###Add to your project
-####Cocoapods
+####CocoaPods
 add following line in your Podfile.
 
 `pod "JKLogDispatcher"`
