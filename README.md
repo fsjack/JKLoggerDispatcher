@@ -38,7 +38,7 @@ Then when NSLog() get executed JKLogDispatcher will ask your module to process t
 ##Examples
 
 ###CocoaLumberjack Connector Module
-Clone this git and run the demo(Don't forget run pod update before running the project), you will see the log below in the console. Unsurprisingly, you can't see any color in your console. it's actually a XCode pluggin. Check it here [XcodeColors](https://github.com/robbiehanson/XcodeColors).
+Clone this git and run the demo(Don't forget run pod update before running the project), you will see the log below in the console. Unsurprisingly, you can't see any color in your console. it's actually a Xcode pluggin. Check it here [XcodeColors](https://github.com/robbiehanson/XcodeColors).
 
 ![Screenshot](screenshot.png)
 
@@ -77,7 +77,7 @@ You can choose `Core` or `Modules` respectively for your project.
 Copy all files under `JKLogDispatcher` folder to your project.
 
 ###Add header to project_prefix.pch file
-If your project is created by XCode 6 and you cannot find your pch file, check this [link](http://stackoverflow.com/questions/25840720/xcode-6-pch-file-not-found).
+If your project is created by Xcode 6 and you cannot find your pch file, check this [link](http://stackoverflow.com/questions/25840720/xcode-6-pch-file-not-found).
 
 	#ifdef __OBJC__
 		#import <JKLogDispatcher/JKLogDispatcher.h>
